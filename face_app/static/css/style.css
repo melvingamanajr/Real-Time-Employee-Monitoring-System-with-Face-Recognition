@@ -1,0 +1,49 @@
+        body {
+            font-family: Arial, sans-serif;
+            margin: 20px;
+        }
+        h1 {
+            font-size: 24px;
+        }
+        p {
+            font-size: 16px;
+            line-height: 1.5;
+        }
+
+        #video-feed {
+            margin: 0 auto;
+            display: block;
+            max-width: 100%;
+            height: auto;
+        }
+
+        .navbar {
+            background-color: #1B2223;
+            color: #F4FEFD;
+            padding: 20px;
+        }
+
+        .nav-link {
+            color: #F4FEFD !important;
+        }
+
+        .current-date-time {
+            font-size: 24px;
+            margin-top: 20px;
+            color: #000000;
+        }
+
+        .navbar-brand {
+            color: #F4FEFD !important;
+            font-size: 24px;
+            font-weight: bold;
+        }
+
+        .navbar-nav .nav-link {
+            font-size: 18px;
+            margin-top: 10px;
+        }
+
+        th, td {
+          text-align: center;
+        }

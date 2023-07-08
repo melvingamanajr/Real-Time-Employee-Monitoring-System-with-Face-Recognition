@@ -1,0 +1,55 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <title>Create Profile</title>
+</head>
+<body>
+    <h1>Create Profile</h1>
+
+    <?php
+    if ($_SERVER['REQUEST_METHOD'] === 'POST') {
+        // Process form submission
+
+        // Retrieve the employee's full name
+        $full_name = $_POST['full_name'];
+
+        // Retrieve the uploaded image file
+        $image_file = $_FILES['image'];
+
+        // Validate and process the uploaded image
+        if ($image_file['error'] === UPLOAD_ERR_OK) {
+            $temp_file = $image_file['tmp_name'];
+
+            // Generate a unique filename using the employee's full name
+            $filename = str_replace(' ', '_', $full_name) . '.jpg';
+
+            // Define the destination folder to save the image
+            $destination_folder = 'dataset/';
+
+            // Move the uploaded image to the destination folder with the unique filename
+            move_uploaded_file($temp_file, $destination_folder . $filename);
+
+            // Display a success message
+            echo 'Profile created successfully!';
+        } else {
+            // Display an error message if the image upload failed
+            echo 'Error uploading the image.';
+        }
+    }
+    ?>
+
+    <form method="post" enctype="multipart/form-data" action="/create">
+        <label for="full_name">Full Name:</label>
+        <input type="text" id="full_name" name="full_name" required>
+
+        <br><br>
+
+        <label for="image">Image:</label>
+        <input type="file" id="image" name="image" accept="image/jpeg, image/png" required>
+
+        <br><br>
+
+        <input type="submit" value="Create Profile">
+    </form>
+</body>
+</html>

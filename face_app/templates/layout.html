@@ -1,0 +1,43 @@
+<!DOCTYPE html>
+{% load static %}
+<html lang="en" dir="ltr">
+  <head>
+    <meta charset="utf-8">
+    <title>Real-Time Employee Monitoring System with Face Recognition</title>
+    <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/css/bootstrap.min.css">
+    <link rel="stylesheet" type="text/css" href="{% static 'css/styles.css' %}">
+
+  </head>
+  <body>
+  {% include 'includes/header.html' %}
+  <div class="container">
+  {% block body %} {% endblock %}
+  </div>
+
+  <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/js/bootstrap.min.js"></script>
+  <!-- Footer -->
+<!--<footer class="py-4 bg-dark text-white-50">-->
+<!--  &lt;!&ndash; Footer Links &ndash;&gt;-->
+<!--  <div class="container-fluid text-center text-md-left">-->
+<!--    &lt;!&ndash; Grid row &ndash;&gt;-->
+<!--    <div class="row">-->
+<!--      &lt;!&ndash; Grid column &ndash;&gt;-->
+<!--      <hr class="clearfix w-100 d-md-none pb-3">-->
+<!--      &lt;!&ndash; Grid column &ndash;&gt;-->
+<!--      <div class="col-md-3 mb-md-0 mb-3">-->
+<!--        <ul class="list-unstyled">-->
+<!--          <li>-->
+<!--            <a href="/">Home</a>-->
+<!--          </li>-->
+<!--        </ul>-->
+
+<!--      </div>-->
+<!--      &lt;!&ndash; Grid column &ndash;&gt;-->
+<!--      &lt;!&ndash; Grid column &ndash;&gt;-->
+<!--    </div>-->
+<!--    &lt;!&ndash; Grid row &ndash;&gt;-->
+<!--  </div>-->
+<!--  &lt;!&ndash; Footer Links &ndash;&gt;-->
+<!--</footer>-->
+  </body>
+</html>

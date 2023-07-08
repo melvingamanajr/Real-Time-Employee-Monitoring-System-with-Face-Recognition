@@ -1,0 +1,67 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <title>Employee Monitoring</title>
+    <!-- Bootstrap CSS -->
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/bootstrap/5.3.0/css/bootstrap.min.css">
+    <style>
+        body {
+            font-family: Arial, sans-serif;
+            margin: 20px;
+        }
+        h1 {
+            font-size: 24px;
+        }
+        p {
+            font-size: 16px;
+            line-height: 1.5;
+        }
+    </style>
+</head>
+<body>
+{% extends 'layout.html' %}
+
+{% block body %}
+    <div class="container">
+        <h1 class="display-4">Employee Monitoring</h1>
+        <form action="/monitor" method="GET" class="mt-4">
+            <div class="mb-3">
+                <label for="datetime">Select Date:</label>
+                <input type="date" id="datetime" name="date" required>
+            </div>
+            <button type="submit" class="btn btn-primary">Submit</button>
+        </form>
+
+        {% if employee_data %}
+            <h2 class="mt-5">Employee Log for {{ selected_date|date:"F j, Y" }}</h2>
+            <table class="table table-striped mt-4">
+                <thead>
+                    <tr>
+                        <th>Name</th>
+                        <th>Image</th>
+                        <th>Location</th>
+                        <th>Date and Time</th>
+                    </tr>
+                </thead>
+                <tbody>
+                    {% for employee in employee_data %}
+                        <tr>
+                            <td>{{ employee.name }}</td>
+                            <td><img src="data:image/jpeg;base64,{{ employee.image }}" alt="Employee Image" width="100"></td>
+                            <td>{{ employee.location }}</td>
+                            <td>{{ employee.datetime|date:"F j, Y" }}</td>
+                        </tr>
+                    {% endfor %}
+                </tbody>
+            </table>
+        {% else %}
+            <p class="mt-5">No employee data found for {{ selected_date|date:"F j, Y" }}</p>
+        {% endif %}
+    </div>
+{% endblock %}
+    <!-- Bootstrap JS -->
+
+In this code, the JavaScript function formatDate formats the selected date using the toLocaleDateString method with specific options for the year, month, and day. The addEventListener function is used to listen for the change event on the date input. When the date is changed, the event handler function formats the selected date and updates the input value with the formatted date.
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/bootstrap/5.3.0/js/bootstrap.bundle.min.js"></script>
+</body>
+</html>

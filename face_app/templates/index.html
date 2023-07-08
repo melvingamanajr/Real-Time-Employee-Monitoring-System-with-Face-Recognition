@@ -1,0 +1,15 @@
+{% extends 'layout.html' %}
+
+{% block body %}
+    <div class="container-fluid mt-5">
+        <div class="row mt-5">
+            <div class="col-md-10">
+                <div class="row mt-5">
+                    <div class="col-md-6">
+                        <img id="video-feed" src="{% url 'video_feed' %}" alt="Video Feed">
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+{% endblock %}

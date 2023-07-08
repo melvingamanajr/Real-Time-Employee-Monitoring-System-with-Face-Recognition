@@ -1,0 +1,39 @@
+{% extends 'layout.html' %}
+{% load base64_encode %}
+
+{% block body %}
+    <div class="container-fluid">
+        <div class="row mt-5">
+            <div class="col-md-10">
+                <h1 class="display-4">Employee Log</h1>
+                <table class="table table-striped table-bordered table-hover">
+                    <thead class="thead-dark">
+                        <tr>
+                            <th>Name</th>
+                            <th>Image</th>
+                            <th>Location</th>
+                            <th>Date and Time</th>
+                            <th>Action</th>
+                        </tr>
+                    </thead>
+                    <tbody>
+                        {% for employee in employee_data %}
+                        <tr>
+                            <td>{{ employee.name }}</td>
+                            <td><img src="data:image/jpg;base64,{{ employee.image|base64_encode }}" alt="Employee Image" width="100"></td>
+                            <td>{{ employee.location }}</td>
+                            <td>{{ employee.datetime }}</td>
+                            <td>
+                                <form method="POST" action="{% url 'delete_employee' employee.id %}">
+                                    {% csrf_token %}
+                                    <button type="submit" class="btn btn-danger">Delete</button>
+                                </form>
+                            </td>
+                        </tr>
+                        {% endfor %}
+                    </tbody>
+                </table>
+            </div>
+        </div>
+    </div>
+{% endblock %}

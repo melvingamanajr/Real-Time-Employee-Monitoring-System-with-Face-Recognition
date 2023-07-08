@@ -1,0 +1,35 @@
+{% extends 'layout.html' %}
+{% load static %}
+{% block body %}
+    <div class="jumbotron">
+        <h1 class="display-4">About Face Recognition in Monitoring System</h1>
+        <figure class="figure">
+          <img src="{% static 'images/cover.jpg' %}" class="img-fluid img-thumbnail" alt="Cover Image">
+          <figcaption class="figure-caption text-right">Face Recognition</figcaption>
+        </figure>
+        <p class="lead">
+            Face recognition technology has become an integral part of modern monitoring systems, providing enhanced security and efficiency. This technology utilizes advanced algorithms to identify and verify individuals based on their facial features.
+        </p>
+        <p class="lead">
+            In a monitoring system, face recognition is used to analyze live or recorded video feeds and perform real-time identification of individuals. It can be applied in various scenarios, such as access control, attendance tracking, and surveillance.
+        </p>
+        <p class="lead">
+            The face recognition system works by capturing facial images or video frames, extracting unique facial features, and comparing them against a pre-existing database of known faces. This process involves several steps, including face detection, face alignment, feature extraction, and face matching.
+        </p>
+        <p>
+            The benefits of incorporating face recognition in a monitoring system include:
+        </p>
+        <ul class="lead">
+            <li>Improved Security: Face recognition provides a reliable and non-intrusive method of identifying individuals, enhancing security measures and preventing unauthorized access.</li>
+            <li>Efficient Tracking: The system can automatically track and monitor the movement of individuals, making it useful in crowded places or high-security areas.</li>
+            <li>Automation: Face recognition eliminates the need for manual identification and verification processes, saving time and resources.</li>
+            <li>Audit Trail: By associating recognized faces with timestamps and location data, the system can generate an audit trail for tracking individuals' activities.</li>
+        </ul>
+        <p class="lead">
+            It is important to note that while face recognition technology offers numerous benefits, privacy and ethical considerations should also be taken into account. Proper measures should be implemented to protect individuals' privacy and ensure the responsible use of this technology.
+        </p>
+        <p class="lead">
+            In conclusion, face recognition technology plays a vital role in modern monitoring systems, offering advanced security, efficiency, and automation. By leveraging this technology, organizations can enhance their monitoring capabilities and improve overall safety and productivity.
+        </p>
+    </div>
+{% endblock %}
